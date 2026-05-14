@@ -1,0 +1,45 @@
+{
+  "name": "tree-sitter-nsis",
+  "version": "0.1.0",
+  "description": "NSIS grammar for tree-sitter",
+  "repository": "https://github.com/idleberg/tree-sitter-nsis",
+  "license": "MIT",
+  "author": "Jan T. Sott",
+  "keywords":[
+    "nsis",
+    "tree-sitter",
+    "parser"
+  ],
+  "files": [
+    "grammar.js",
+    "queries/*",
+    "src/**",
+    "*.wasm"
+  ],
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.25.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.nsis",
+      "file-types": [
+        "nsi",
+        "nsh"
+      ],
+      "highlights": "queries/highlights.scm",
+      "folds": "queries/folds.scm",
+      "indents": "queries/indents.scm"
+    }
+  ],
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "tree-sitter-cli"
+    ]
+  },
+  "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800"
+}
