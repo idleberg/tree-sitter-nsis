@@ -22,6 +22,9 @@
     "parse": "tree-sitter parse"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "@idleberg/configs": "^0.4.2",
     "tree-sitter-cli": "^0.25.0"
   },
   "tree-sitter": [

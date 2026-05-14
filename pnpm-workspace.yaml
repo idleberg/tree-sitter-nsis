@@ -5,4 +5,5 @@ publicHoistPattern:
   - '*@total-typescript/tsconfig*'
   - '*lefthook*'
 allowBuilds:
+  lefthook: true
   tree-sitter-cli: true
