@@ -25,6 +25,9 @@ jobs:
       - name: Generate parser
         run: pnpm generate
 
+      - name: Build WASM
+        run: pnpm build
+
       - name: Run tests
         run: pnpm test
 
