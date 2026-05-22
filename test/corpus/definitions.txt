@@ -58,6 +58,47 @@ SectionEnd
           (string_content))))))
 
 ================================================================================
+Section with identifier name
+================================================================================
+
+Section Install
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition
+    parameter: (identifier)))
+
+================================================================================
+Section with flag
+================================================================================
+
+Section /o "Optional" SEC_OPT
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition
+    parameter: (flag)
+    parameter: (string
+      (string_content))
+    parameter: (identifier)))
+
+================================================================================
+Bare section
+================================================================================
+
+Section
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition))
+
+================================================================================
 Section group
 ================================================================================
 
@@ -77,6 +118,44 @@ SectionGroupEnd
     (section_definition
       parameter: (string
         (string_content)))
+    (section_definition
+      parameter: (string
+        (string_content)))))
+
+================================================================================
+Section group with identifier name
+================================================================================
+
+SectionGroup MyGroup
+    Section "Child"
+    SectionEnd
+SectionGroupEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_group
+    parameter: (identifier)
+    (section_definition
+      parameter: (string
+        (string_content)))))
+
+================================================================================
+Section group with flag
+================================================================================
+
+SectionGroup /e "Expanded"
+    Section "Child"
+    SectionEnd
+SectionGroupEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_group
+    parameter: (flag)
+    parameter: (string
+      (string_content))
     (section_definition
       parameter: (string
         (string_content)))))
@@ -287,6 +366,23 @@ Preprocessor directives
     (preproc_directive
       directive: (preproc_keyword)
       argument: (identifier))))
+
+================================================================================
+Define with flag
+================================================================================
+
+!define /date BUILD_DATE "%Y-%m-%d"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (statement
+    (preproc_directive
+      directive: (preproc_keyword)
+      argument: (flag)
+      argument: (identifier)
+      argument: (string
+        (string_content)))))
 
 ================================================================================
 Variable declaration
