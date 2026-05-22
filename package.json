@@ -10,6 +10,9 @@
     "tree-sitter",
     "parser"
   ],
+  "exports": {
+    "./wasm": "./tree-sitter-nsis.wasm"
+  },
   "files": [
     "grammar.js",
     "queries/*",

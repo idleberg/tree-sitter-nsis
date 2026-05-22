@@ -330,6 +330,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "macro_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "preproc_conditional"
         },
         {

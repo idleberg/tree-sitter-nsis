@@ -83,6 +83,7 @@ module.exports = grammar({
     ),
 
     _body_item: $ => choice(
+      $.macro_definition,
       $.preproc_conditional,
       $.statement,
       $.label,

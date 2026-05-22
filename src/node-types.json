@@ -178,6 +178,10 @@
           "named": true
         },
         {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
           "type": "preproc_conditional",
           "named": true
         },
@@ -336,6 +340,10 @@
           "named": true
         },
         {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
           "type": "preproc_conditional",
           "named": true
         },
@@ -475,6 +483,10 @@
         },
         {
           "type": "lang_string_reference",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {
@@ -634,6 +646,10 @@
           "named": true
         },
         {
+          "type": "macro_definition",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -770,6 +786,10 @@
       "types": [
         {
           "type": "label",
+          "named": true
+        },
+        {
+          "type": "macro_definition",
           "named": true
         },
         {

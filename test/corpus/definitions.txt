@@ -109,6 +109,44 @@ Macro definition
           (define_reference))))))
 
 ================================================================================
+Nested macro definition
+================================================================================
+
+Section "Install"
+    !macro WriteRegHelper key value
+        WriteRegStr SHCTX "${key}" "${value}"
+    !macroend
+    !insertmacro WriteRegHelper "Path" "$INSTDIR"
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition
+    parameter: (string
+      (string_content))
+    (macro_definition
+      name: (identifier)
+      parameter: (identifier)
+      parameter: (identifier)
+      (statement
+        (command
+          name: (identifier)
+          argument: (identifier)
+          argument: (string
+            (define_reference))
+          argument: (string
+            (define_reference)))))
+    (statement
+      (preproc_directive
+        directive: (preproc_keyword)
+        argument: (identifier)
+        argument: (string
+          (string_content))
+        argument: (string
+          (variable))))))
+
+================================================================================
 Preprocessor conditional
 ================================================================================
 
