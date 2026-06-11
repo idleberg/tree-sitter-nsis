@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-nsis",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "NSIS grammar for tree-sitter",
   "repository": "https://github.com/idleberg/tree-sitter-nsis",
   "license": "MIT",
