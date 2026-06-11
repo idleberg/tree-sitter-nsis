@@ -273,6 +273,76 @@
     }
   },
   {
+    "type": "macro_invocation",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "backtick_string",
+            "named": true
+          },
+          {
+            "type": "comparison_operator",
+            "named": true
+          },
+          {
+            "type": "define_reference",
+            "named": true
+          },
+          {
+            "type": "flag",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label_reference",
+            "named": true
+          },
+          {
+            "type": "lang_string_reference",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "pipe_operator",
+            "named": true
+          },
+          {
+            "type": "raw_string",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "define_reference",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "page_ex_block",
     "named": true,
     "fields": {
@@ -943,6 +1013,10 @@
       "types": [
         {
           "type": "command",
+          "named": true
+        },
+        {
+          "type": "macro_invocation",
           "named": true
         },
         {

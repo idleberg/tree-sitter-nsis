@@ -1,0 +1,198 @@
+================================================================================
+LogicLib If/Else/EndIf
+================================================================================
+
+Function .onInit
+${If} $LANGUAGE == 1033
+  StrCpy $1 "supported"
+${Else}
+  StrCpy $1 "unsupported"
+${EndIf}
+FunctionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_definition
+    name: (identifier)
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (variable)
+        argument: (comparison_operator)
+        argument: (comparison_operator)
+        argument: (number)))
+    (statement
+      (command
+        name: (identifier)
+        argument: (variable)
+        argument: (string
+          (string_content))))
+    (statement
+      (macro_invocation
+        name: (define_reference)))
+    (statement
+      (command
+        name: (identifier)
+        argument: (variable)
+        argument: (string
+          (string_content))))
+    (statement
+      (macro_invocation
+        name: (define_reference)))))
+
+================================================================================
+LogicLib Switch/Case
+================================================================================
+
+Section
+${Switch} $R0
+  ${Case} "value1"
+    DetailPrint "one"
+  ${CaseElse}
+    DetailPrint "other"
+${EndSwitch}
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (variable)))
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (string
+          (string_content))))
+    (statement
+      (command
+        name: (identifier)
+        argument: (string
+          (string_content))))
+    (statement
+      (macro_invocation
+        name: (define_reference)))
+    (statement
+      (command
+        name: (identifier)
+        argument: (string
+          (string_content))))
+    (statement
+      (macro_invocation
+        name: (define_reference)))))
+
+================================================================================
+LogicLib For/Next loop
+================================================================================
+
+Function test
+${For} $R0 1 10
+  DetailPrint "iteration"
+${Next}
+FunctionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_definition
+    name: (identifier)
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (variable)
+        argument: (number)
+        argument: (number)))
+    (statement
+      (command
+        name: (identifier)
+        argument: (string
+          (string_content))))
+    (statement
+      (macro_invocation
+        name: (define_reference)))))
+
+================================================================================
+LogicLib Do/LoopUntil
+================================================================================
+
+Function test
+${Do}
+  Sleep 100
+${LoopUntil} $R1 >= 5
+FunctionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_definition
+    name: (identifier)
+    (statement
+      (macro_invocation
+        name: (define_reference)))
+    (statement
+      (command
+        name: (identifier)
+        argument: (number)))
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (variable)
+        argument: (comparison_operator)
+        argument: (comparison_operator)
+        argument: (number)))))
+
+================================================================================
+Utility library macro with arguments
+================================================================================
+
+Section
+${GetFileName} "C:\path\file.ext" $R0
+SectionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (section_definition
+    (statement
+      (macro_invocation
+        name: (define_reference)
+        argument: (string
+          (string_content))
+        argument: (variable)))))
+
+================================================================================
+Bare macro invocation
+================================================================================
+
+Function .onInit
+${MementoSectionRestore}
+FunctionEnd
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (function_definition
+    name: (identifier)
+    (statement
+      (macro_invocation
+        name: (define_reference)))))
+
+================================================================================
+Top-level macro invocation
+================================================================================
+
+${MyMacro} "arg1" "arg2"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (statement
+    (macro_invocation
+      name: (define_reference)
+      argument: (string
+        (string_content))
+      argument: (string
+        (string_content)))))

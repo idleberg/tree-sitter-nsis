@@ -141,6 +141,7 @@ module.exports = grammar({
         $.preproc_directive,
         $.plugin_call,
         $.variable_declaration,
+        $.macro_invocation,
         $.command,
       ),
       $._newline,
@@ -179,6 +180,11 @@ module.exports = grammar({
       /!verbose/i,
       /!warning/i,
     ),
+
+    macro_invocation: $ => prec.right(seq(
+      field('name', $.define_reference),
+      repeat(field('argument', $._value)),
+    )),
 
     command: $ => prec.right(seq(
       field('name', $.identifier),

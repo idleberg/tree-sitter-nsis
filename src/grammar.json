@@ -548,6 +548,10 @@
             },
             {
               "type": "SYMBOL",
+              "name": "macro_invocation"
+            },
+            {
+              "type": "SYMBOL",
               "name": "command"
             }
           ]
@@ -716,6 +720,34 @@
           "flags": "i"
         }
       ]
+    },
+    "macro_invocation": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "SYMBOL",
+              "name": "define_reference"
+            }
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "FIELD",
+              "name": "argument",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_value"
+              }
+            }
+          }
+        ]
+      }
     },
     "command": {
       "type": "PREC_RIGHT",
