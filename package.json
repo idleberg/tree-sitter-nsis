@@ -1,48 +1,49 @@
 {
-  "name": "tree-sitter-nsis",
-  "version": "0.3.0",
-  "description": "NSIS grammar for tree-sitter",
-  "repository": "https://github.com/idleberg/tree-sitter-nsis",
-  "license": "MIT",
-  "author": "Jan T. Sott",
-  "keywords": [
-    "nsis",
-    "tree-sitter",
-    "parser"
-  ],
-  "exports": {
-    "./wasm": "./tree-sitter-nsis.wasm"
-  },
-  "files": [
-    "grammar.js",
-    "queries/*",
-    "src/**",
-    "*.wasm"
-  ],
-  "scripts": {
-    "build": "tree-sitter build --wasm",
-    "generate": "tree-sitter generate",
-    "prepublishOnly": "tree-sitter generate && tree-sitter build --wasm",
-    "test": "tree-sitter test",
-    "parse": "tree-sitter parse"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^21.0.1",
-    "@commitlint/config-conventional": "^21.0.1",
-    "@idleberg/configs": "^0.4.2",
-    "tree-sitter-cli": "^0.26.9"
-  },
-  "tree-sitter": [
-    {
-      "scope": "source.nsis",
-      "file-types": [
-        "nsi",
-        "nsh"
-      ],
-      "highlights": "queries/highlights.scm",
-      "folds": "queries/folds.scm",
-      "indents": "queries/indents.scm"
-    }
-  ],
-  "packageManager": "pnpm@11.1.2"
+	"name": "tree-sitter-nsis",
+	"version": "0.3.0",
+	"description": "NSIS grammar for tree-sitter",
+	"repository": "https://github.com/idleberg/tree-sitter-nsis",
+	"license": "MIT",
+	"author": "Jan T. Sott",
+	"keywords": [
+		"nsis",
+		"tree-sitter",
+		"parser"
+	],
+	"exports": {
+		"./wasm": "./tree-sitter-nsis.wasm"
+	},
+	"files": [
+		"grammar.js",
+		"queries/*",
+		"src/**",
+		"*.wasm"
+	],
+	"scripts": {
+		"build": "tree-sitter build --wasm",
+		"generate": "tree-sitter generate",
+		"prepublishOnly": "tree-sitter generate && tree-sitter build --wasm",
+		"test": "tree-sitter test",
+		"parse": "tree-sitter parse"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^21.2.1",
+		"@commitlint/config-conventional": "^21.2.0",
+		"@idleberg/configs": "^0.4.6",
+		"np": "^12.0.0",
+		"tree-sitter-cli": "^0.26.11"
+	},
+	"tree-sitter": [
+		{
+			"scope": "source.nsis",
+			"file-types": [
+				"nsi",
+				"nsh"
+			],
+			"highlights": "queries/highlights.scm",
+			"folds": "queries/folds.scm",
+			"indents": "queries/indents.scm"
+		}
+	],
+	"packageManager": "pnpm@11.1.2"
 }
