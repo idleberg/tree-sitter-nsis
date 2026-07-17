@@ -99,7 +99,7 @@ i'
 ; ── Variables & References ──
 
 (variable) @variable
-(define_reference) @constant.macro
+(define_reference) @constant.builtin
 (lang_string_reference) @string.special
 
 ; ── Built-in Variables ──
@@ -112,7 +112,7 @@ i'
 (string) @string
 (raw_string) @string
 (backtick_string) @string
-(escape_sequence) @string.escape
+(escape_sequence) @constant.character.escape
 
 ; ── Numbers ──
 
