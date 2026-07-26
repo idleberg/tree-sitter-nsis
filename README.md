@@ -8,7 +8,7 @@
 
 > [!WARNING]
 >
-> This package is in an experimental change and things might break.
+> This package is in an experiment and things might break.
 
 ## Installation 💿
 
