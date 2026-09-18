@@ -253,6 +253,70 @@ Preprocessor conditional
           argument: (identifier))))))
 
 ================================================================================
+Preprocessor else conditions
+================================================================================
+
+!if 1 == 0
+    Nop
+!else if 1 == 1
+    Nop
+!else ifdef DEBUG
+    Nop
+!else ifndef DEBUG
+    Nop
+!else ifmacrodef MyMacro
+    Nop
+!else ifmacrondef MyMacro
+    Nop
+!endif
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (preproc_conditional
+    keyword: (preproc_keyword)
+    (number)
+    (comparison_operator)
+    (comparison_operator)
+    (number)
+    (statement
+      (command
+        name: (identifier)))
+    (preproc_else
+      modifier: (identifier)
+      (number)
+      (comparison_operator)
+      (comparison_operator)
+      (number)
+      (statement
+        (command
+          name: (identifier))))
+    (preproc_else
+      modifier: (identifier)
+      (identifier)
+      (statement
+        (command
+          name: (identifier))))
+    (preproc_else
+      modifier: (identifier)
+      (identifier)
+      (statement
+        (command
+          name: (identifier))))
+    (preproc_else
+      modifier: (identifier)
+      (identifier)
+      (statement
+        (command
+          name: (identifier))))
+    (preproc_else
+      modifier: (identifier)
+      (identifier)
+      (statement
+        (command
+          name: (identifier))))))
+
+================================================================================
 Plugin call
 ================================================================================
 
